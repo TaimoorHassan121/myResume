@@ -1,0 +1,53 @@
+
+<div class="mx-5">
+    <section class="ftco-section ftco-project" id="portfolio">
+        <div class="container-fluid px-md-4 mx-4">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 heading-section text-center ">
+                    <span class="subheading">Accomplishments</span>
+                    <h2 class="mb-4">Our Projects</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" *ngFor="let project of projects">
+                    <div class="project img shadow  d-flex justify-content-center align-items-center pointer" 
+                        [style.background-image]="'url(' + project.images[0] + ')'"
+                        (click)="openModal(project.name, project.images)">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="#">{{ project.name }}</a></h3>
+                            <button class="btn btn-primary"><span class="text-info">Click Me</span></button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal (Displays Multiple Images) -->
+        <div *ngIf="isModalOpen" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn" (click)="closeModal()">✖</span>            
+                <!-- Modal Heading -->
+                <h2 class="modal-heading fw-bold my-5 bg-primary">{{ selectedProjectTitle }}</h2>
+                
+                <!-- Scrollable Image Container -->
+                <div class="image-container">
+                    <img *ngFor="let img of selectedProjectImages" 
+                         [src]="img" 
+                         class="modal-image" 
+                         (click)="openFullScreen(img)"> <!-- Open full-screen image -->
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isFullScreen" class="fullscreen-overlay" (click)="closeFullScreen()">
+            <img [src]="selectedFullScreenImage" class="fullscreen-image">
+        </div>
+        
+    </section>
+</div>
+
+
+
+
