@@ -86,6 +86,23 @@ export class OurprojectComponent {
       ]
     },
     { 
+      name: 'Quiz App', 
+      images: [
+        './assets/project-images/QuizLogin.png',
+        './assets/project-images/QuizAdminMain.png',
+        './assets/project-images/adminUser.png',
+        './assets/project-images/careerlevel.png',
+        './assets/project-images/candidateQuiz.png',
+        './assets/project-images/QuizQuestion.png',
+        './assets/project-images/AddTestLink.png',
+        './assets/project-images/SendEmail.png',
+        './assets/project-images/quizpage.png',
+        './assets/project-images/quezpage.png',
+        './assets/project-images/quezstart.png',
+        './assets/project-images/quizend.png'
+      ]
+    },
+    { 
       name: 'Tracking App', 
       images: [
         './assets/project-images/Windowapp1.png',
